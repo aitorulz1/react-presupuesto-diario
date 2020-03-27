@@ -1,11 +1,15 @@
-import React from 'react';
+import React, { Fragment } from 'react';
+import { colorearPresupuesto } from '../helpers';
 
 const ControlGastos = ({presupuesto, resto}) => (  
-    <div>
-        <p>Presupuesto: <span>{presupuesto}</span></p>
-        <p>Resto: <span>{resto}</span></p>
-
-    </div>
+    <Fragment>
+        <div className="alert-primary">
+            Presupuesto: {presupuesto} €
+        </div>
+        <div className={ colorearPresupuesto( presupuesto, resto ) }>
+            Resto: {resto} €
+        </div>
+    </Fragment>
 );
 
  
